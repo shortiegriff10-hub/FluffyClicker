@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mr Fluffy & The Pelican — Clicker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mr Fluffy & The Pelican</h1>
+    <div class="stats">
+      <div class="stat"><strong>Carp:</strong> <span id="carp-count">0</span></div>
+      <div class="stat"><strong>Per Click:</strong> <span id="cpc">1</span></div>
+      <div class="stat"><strong>Pelican Lvl:</strong> <span id="pelican-lvl">1</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="play-area">
+      <div class="sky">
+        <div id="pelican" class="pelican" title="Pelican">
+          <!-- Simple pelican SVG -->
+          <svg viewBox="0 0 200 120" width="220" height="130" aria-hidden="true">
+            <g id="pelican-svg">
+              <ellipse cx="90" cy="50" rx="70" ry="32" fill="#fff8e6" stroke="#d9cfae" />
+              <path d="M10 55 Q 70 5 150 50" fill="#fff8e6" stroke="#d9cfae"/>
+              <path d="M150 50 Q170 55 180 65 Q165 68 150 63" fill="#ffd27a" stroke="#c78f3a"/>
+              <circle cx="120" cy="40" r="6" fill="#222" />
+            </g>
+          </svg>
+        </div>
+
+        <div id="mrfluffy" class="mrfluffy" title="Click Mr Fluffy">
+          <!-- Mr Fluffy SVG -->
+          <svg viewBox="0 0 120 120" width="140" height="140" aria-hidden="true">
+            <g id="hamster-svg">
+              <ellipse cx="60" cy="70" rx="40" ry="30" fill="#f7d9b6" stroke="#d8af86"/>
+              <circle cx="40" cy="55" r="8" fill="#fff"/>
+              <circle cx="40" cy="55" r="3" fill="#000"/>
+              <circle cx="80" cy="55" r="8" fill="#fff"/>
+              <circle cx="80" cy="55" r="3" fill="#000"/>
+              <path d="M53 75 Q60 82 67 75" stroke="#c26b4b" stroke-width="2" fill="none"/>
+              <circle cx="48" cy="35" r="6" fill="#e8b78d"/>
+              <circle cx="72" cy="35" r="6" fill="#e8b78d"/>
+            </g>
+          </svg>
+        </div>
+
+        <div id="floating-container"></div>
+      </div>
+    </section>
+
+    <aside class="panels">
+      <div class="panel upgrades">
+        <h2>Upgrades</h2>
+        <div class="upgrade-list">
+          <button id="buy-hamster-upg" class="upgrade-btn">Hamster +1 CPC (Cost: <span id="cost-hamster">10</span>)</button>
+          <button id="buy-pelican-upg" class="upgrade-btn">Pelican Level +1 (Cost: <span id="cost-pelican">25</span>)</button>
+          <button id="buy-autoclick" class="upgrade-btn">Hamster Wheel (Auto-click/sec) (Cost: <span id="cost-wheel">100</span>)</button>
+          <button id="buy-egg" class="upgrade-btn">Golden Hay (cosmetic) (Cost: <span id="cost-egg">500</span>)</button>
+        </div>
+        <div class="controls">
+          <button id="save-btn">Save</button>
+          <button id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel oscar">
+        <h2>Oscar Ceran</h2>
+        <div class="oscar-card">
+          <div class="oscar-avatar">🧑‍🌾</div>
+          <div class="oscar-text">
+            <p>Hi, I'm Oscar. I have side quests and occasional bonuses. Click "Talk" to view available quests.</p>
+            <button id="talk-oscar">Talk to Oscar</button>
+          </div>
+        </div>
+        <div id="quest-panel" class="quest-panel hidden">
+          <h3>Quests</h3>
+          <div id="quest-list"></div>
+          <button id="close-quests">Close</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small>Mr Fluffy © 2025 — Carp economy alpha</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
